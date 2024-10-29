@@ -11,7 +11,6 @@ results/
 rlight.egg-info
 run/*
 *.log
-*.png
 *.csv
 eval/*
 *.pdf
