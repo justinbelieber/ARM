@@ -1,0 +1,3 @@
+[submodule "arm/ota"]
+	path = arm/ota
+	url = https://github.com/Hymwgk/ota

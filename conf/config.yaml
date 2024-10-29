@@ -1,0 +1,38 @@
+rlbench:
+    task:  open_drawer   
+    demos: 30
+
+    demo_path: /data_nvme/wgk/demo/     
+    episode_length: 10  
+    cameras: [active]  
+    camera_resolution: [128, 128]  
+    scene_bounds: [-0.5, -0.5, -0.15, 0.5, 0.5, 0.85] 
+replay:
+    batch_size: 128 #68
+    timesteps: 1
+    prioritisation: True     
+    use_disk: True
+    path: '/data_nvme/wgk/replay'  # Only used when use_disk is True.
+
+framework:
+    log_freq: 100
+    save_freq: 100
+    train_envs: 1
+    eval_envs: 1
+    replay_ratio: 128
+    transitions_before_train: 200
+    tensorboard_logging: True
+    csv_logging: True
+    training_iterations: 40000  
+    gpu: 0
+    env_gpu: 0
+    logdir: /data_nvme/wgk/train/   
+    seeds: 1
+    setseeds: []
+
+defaults:
+    - method: OTA # OTA   C2FARM   BCA
+
+hydra:
+    run:
+        dir: ${framework.logdir}/${rlbench.task}/${method.name}

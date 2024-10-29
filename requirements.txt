@@ -1,0 +1,9 @@
+hydra-core
+scipy
+shapely
+trimesh
+pyrender
+matplotlib
+opencv-python-headless
+xxhash
+open3d
