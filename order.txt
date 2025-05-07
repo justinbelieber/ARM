@@ -1,0 +1,4 @@
+(base) cjz@cjz:~$ conda deactivate 
+cjz@cjz:~$ conda activate OTA
+(OTA) cjz@cjz:~$ cd OTA/ARM/
+(OTA) cjz@cjz:~/OTA/ARM$ python eval_ota.py method=OTA     rlbench.task=open_drawer     rlbench.demo_path=/home/cjz/OTA/ota_data     rlbench.cameras=[active]     framework.gpu=0     framework.eval_envs=1

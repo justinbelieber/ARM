@@ -1,6 +1,9 @@
 import gc
 import logging
 import os
+import multiprocessing as mp
+
+mp.set_start_method('spawn', force=True)
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 import pickle
@@ -497,7 +500,7 @@ def main(cfg: DictConfig) -> None:
         action_mode=action_mode, 
         dataset_root=cfg.rlbench.demo_path,
         episode_length=cfg.rlbench.episode_length,
-        headless=True,
+        headless=False,
         floating_cam=cfg.method.floating_cam if "floating_cam" in cfg.method.keys() else True,
         robot_setup=cfg.method.robot,
         time_in_state=cfg.method.time_in_state,

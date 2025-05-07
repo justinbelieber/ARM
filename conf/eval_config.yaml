@@ -31,7 +31,7 @@ framework:
     setseeds: []
 
 defaults:
-    - method: OTA # OTA   C2FARM   BCA
+    - method: OTA # OTA   C2FARM   
 
 hydra:
     run:
